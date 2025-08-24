@@ -29,7 +29,8 @@ def remove_html_tags(text):
 
 
 def search_news(query, display, sort):
-    logger.info(f"뉴스 검색 시작 | query={query}, display={display}, sort={sort}")
+    sort_map = {"sim": "정확도순", "date": "날짜순"}
+    logger.info(f"뉴스 검색 시작 | query={query}, display={display}, sort={sort_map.get(sort, sort)}")
     client_id = os.getenv("NAVER_CLIENT_ID")
     client_secret = os.getenv("NAVER_CLIENT_SECRET")
     if not client_id or not client_secret:
