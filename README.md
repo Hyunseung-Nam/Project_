@@ -29,8 +29,8 @@
 
 ```bash
 1. 레포지토리 복사
-git clone https://github.com/Hyunseung-Nam/Project_.git
-cd Project_
+git clone https://github.com/Hyunseung-Nam/naver-news-searcher.git
+cd naver-news-searcher
 
 2. 라이브러리 설치
 pip install -r requirements.txt
