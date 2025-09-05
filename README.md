@@ -45,11 +45,8 @@ pip install -r requirements.txt
 $EnvPath = Join-Path -Path (Get-Location).Path -ChildPath ".env"
 $utf8NoBOM = New-Object System.Text.UTF8Encoding($false)
 $envContent = @"
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=[본인 Gmail 주소]
-SMTP_PASS=[앱 비밀번호 16자리]   # Google 계정 > 보안 > 앱 비밀번호에서 발급
-MAIL_TO=[알림을 받을 이메일 주소]
+NAVER_CLIENT_ID=your_naver_client_id
+NAVER_CLIENT_SECRET=your_naver_client_secret
 "@
 [System.IO.File]::WriteAllText($EnvPath, $envContent, $utf8NoBOM)
 "Written: $EnvPath"
