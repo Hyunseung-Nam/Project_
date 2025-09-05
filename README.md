@@ -51,6 +51,12 @@ NAVER_CLIENT_SECRET=your_naver_client_secret
 [System.IO.File]::WriteAllText($EnvPath, $envContent, $utf8NoBOM)
 "Written: $EnvPath"
 
+# --- macOS / Linux / PowerShell 7+ ---
+cat > .env << 'EOF'
+NAVER_CLIENT_ID=your_naver_client_id
+NAVER_CLIENT_SECRET=your_naver_client_secret
+EOF
+
 5. 실행
 python src/app.py
 ```
