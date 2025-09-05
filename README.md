@@ -25,7 +25,7 @@
 
 ---
 
-## 🚀 설치 & 실행 방법
+## 🚀 설치 & 실행 방법 (터미널 창에 그대로 복사-붙여넣기 해주세요)
 
 ```bash
 1. 레포지토리 복사
@@ -41,8 +41,18 @@ source .venv/bin/activate    # Mac/Linux
 pip install -r requirements.txt
 
 4. 환경변수 설정 (.env 파일 생성)
-echo "NAVER_CLIENT_ID=your_client_id" >> .env
-echo "NAVER_CLIENT_SECRET=your_client_secret" >> .env
+# --- Windows PowerShell 5.1 (UTF-8 BOM 없음으로 저장) ---
+$EnvPath = Join-Path -Path (Get-Location).Path -ChildPath ".env"
+$utf8NoBOM = New-Object System.Text.UTF8Encoding($false)
+$envContent = @"
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=[본인 Gmail 주소]
+SMTP_PASS=[앱 비밀번호 16자리]   # Google 계정 > 보안 > 앱 비밀번호에서 발급
+MAIL_TO=[알림을 받을 이메일 주소]
+"@
+[System.IO.File]::WriteAllText($EnvPath, $envContent, $utf8NoBOM)
+"Written: $EnvPath"
 
 5. 실행
 python src/app.py
