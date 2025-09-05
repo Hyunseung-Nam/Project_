@@ -32,14 +32,19 @@
 git clone https://github.com/Hyunseung-Nam/naver-news-searcher.git
 cd naver-news-searcher
 
-2. 라이브러리 설치
+2. 가상환경 설정(선택사항이지만 권장)
+python -m venv .venv
+source .venv/bin/activate    # Mac/Linux
+.venv/Scripts/activate       # Windows
+
+3. 라이브러리 설치
 pip install -r requirements.txt
 
-3. 환경변수 설정 (.env 파일 생성)
+4. 환경변수 설정 (.env 파일 생성)
 echo "NAVER_CLIENT_ID=your_client_id" >> .env
 echo "NAVER_CLIENT_SECRET=your_client_secret" >> .env
 
-4. 실행
+5. 실행
 python src/app.py
 ```
 
